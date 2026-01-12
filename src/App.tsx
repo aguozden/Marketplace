@@ -1,10 +1,7 @@
+import Home from './pages/Home';
+
 function App() {
-  return (
-    <main>
-      <h1>Marketplace solidario</h1>
-      <p>Conectando necesidades con capacidades</p>
-    </main>
-  );
+  return <Home />;
 }
 
 export default App;
