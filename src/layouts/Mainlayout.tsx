@@ -6,7 +6,9 @@ export default function MainLayout() {
       <header>
         <nav>
           <Link to="/">Home</Link> |{' '}
-          <Link to="/login">Login</Link>
+          <Link to="/needs">Needs</Link> |{' '}
+          <Link to="/capabilities">Capabilities</Link> |{' '}
+          <Link to="/login">Login</Link> |{' '}
         </nav>
       </header>
 

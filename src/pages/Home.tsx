@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <section>
-      <h1>Marketplace solidario</h1>
-      <p>Conectando necesidades con capacidades</p>
+    <>
+      <h1>Solidarity Marketplace</h1>
+      <p>Connecting needs with capabilities</p>
 
-      <Link to="/login">Ir a Login</Link>
-    </section>
+      {/*<Link to="/login">SIGN IN</Link>*/}
+    </>
   );
 }
