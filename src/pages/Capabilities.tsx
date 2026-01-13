@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import { capabilities } from "../data/capabilities";
 
 export default function Capabilities() {
@@ -8,11 +9,12 @@ export default function Capabilities() {
 
       <ul>
         {capabilities.map((cap) => (
-          <li key={cap.id}>
-            <h3>{cap.title}</h3>
-            <p>{cap.description}</p>
-            <small>{cap.provider}</small>
-          </li>
+        <Card
+          key={cap.id}
+          title={cap.title}
+          description={cap.description}
+          footer={cap.provider}
+        />
         ))}
       </ul>
     </>

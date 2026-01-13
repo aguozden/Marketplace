@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import { needs } from "../data/needs";
 
 export default function Needs() {
@@ -8,11 +9,12 @@ export default function Needs() {
 
       <ul>
         {needs.map((need) => (
-          <li key={need.id}>
-            <h3>{need.title}</h3>
-            <p>{need.description}</p>
-            <small>{need.organization}</small>
-          </li>
+          <Card
+            key={need.id}
+            title={need.title}
+            description={need.description}
+            footer={need.organization}
+          />
         ))}
       </ul>
     </>
