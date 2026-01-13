@@ -1,11 +1,66 @@
+/* =========================
+   CSS Reset
+   ========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   Base styles
+   ========================= */
+
 body {
   font-family: system-ui, sans-serif;
   background-color: #f9f9f9;
   color: #333;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+header {
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav a {
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* =========================
+   Components
+   ========================= */
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (min-width: 600px) {
+  .card {
+    margin-bottom: 1rem;
+  }
 }
