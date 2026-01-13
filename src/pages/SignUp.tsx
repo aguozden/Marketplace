@@ -1,36 +1,51 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function SignUp() {
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const ngo = {
+      name,
+      email,
+    };
+
+    localStorage.setItem("ngo", JSON.stringify(ngo));
+    console.log(localStorage.getItem("ngo"));
+
+    localStorage.setItem("ngo", JSON.stringify(ngo));
+    navigate("/dashboard");
+  };
+
   return (
-    <section>
+    <div>
       <h1>NGO Sign Up</h1>
+      <p>Register your organization</p>
 
-      <p>
-        Create an account to publish needs and connect with people who want to
-        help.
-      </p>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="NGO Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
 
-      <form>
-        <label>
-          NGO Name
-          <input type="text" placeholder="Organization name" />
-        </label>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-        <label>
-          Country
-          <input type="text" placeholder="Country" />
-        </label>
-
-        <label>
-          Email
-          <input type="email" placeholder="Email address" />
-        </label>
-
-        <label>
-          Password
-          <input type="password" placeholder="Password" />
-        </label>
-
-        <button type="submit">Create account</button>
+        <button type="submit">Sign Up</button>
       </form>
-    </section>
+    </div>
   );
 }
