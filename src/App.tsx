@@ -6,6 +6,7 @@ import Needs from "./pages/Needs";
 import Capabilities from "./pages/Capabilities";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
+import CreateNeed from "./pages/CreateNeed";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/capabilities" element={<Capabilities />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/needs/new" element={<CreateNeed />} />
       </Route>
     </Routes>
   );

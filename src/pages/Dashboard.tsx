@@ -1,11 +1,23 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Dashboard() {
-  const ngo = JSON.parse(localStorage.getItem("ngo") || "{}");
+  const navigate = useNavigate();
+  const ngo = JSON.parse(localStorage.getItem("ngo") || "null");
+
+  useEffect(() => {
+    if (!ngo) {
+      navigate("/signup");
+    }
+  }, [ngo, navigate]);
+
+  if (!ngo) return null;
 
   return (
     <div>
       <h1>Dashboard</h1>
 
-      <p>Welcome, {ngo.name || "NGO"} 👋</p>
+      <p>Welcome, {ngo.name} 👋</p>
 
       <section>
         <h2>Your profile</h2>
@@ -19,10 +31,9 @@ export default function Dashboard() {
 
       <section>
         <h2>Next steps</h2>
-        <ul>
-          <li>Create a Need</li>
-          <li>Offer a Capability</li>
-        </ul>
+        <button onClick={() => navigate("/needs/new")}>
+          Create a Need
+        </button>
       </section>
     </div>
   );
